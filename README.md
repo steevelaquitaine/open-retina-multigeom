@@ -1,5 +1,7 @@
 # open-retina-multigeom (private)
 
+WARNING: DO NOT MAKE PUBLIC BEFORE BAPTISTE LORENZI'S AUTHORIZATION.
+
 The part of [open-retina](https://github.com/open-retina/open-retina) that multigeom's
 retina tests need (`multigeom.encoders.retina`, the tests in multigeom-tutorials
 `tests/test_retina.py`). It is installed as the `openretina` package:
