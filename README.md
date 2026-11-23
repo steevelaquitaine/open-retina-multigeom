@@ -25,17 +25,19 @@ then the few dependencies it imports, keeping your torch:
 Only the files those tests load are tracked (see `.gitignore`). **This repository is
 private: Baptiste's work is unpublished. Do not make it public without his agreement.**
 
-## Data (not in this repository)
+## Checkpoints and data (not in this repository)
 
-On Steeve's machine:
+- **The checkpoints multigeom uses** are in the Hugging Face repository
+  `steevelaquitaine/multigeom`, laid out as those of V1 and V4:
+  `encoders/lorenzi/<area>/best_model.pt` (the cell's Lorenzi model) and
+  `diffusion/lorenzi/<area>/final_model.pt` (the conditional diffusion model of its
+  mosaic, trained on TinyImageNet), with areas such as `retina-W3_176-exp7`.
+- **All the checkpoints, and the recordings the encoders were fitted to**, are on
+  Steeve's machine:
+  - `/home/steeve/steeve/idv/datasets/proj_multigeom/open-retina-multigeom/lorenzi_adaptation/`:
+    `weights/<cell>.ckpt`, the 488 Lorenzi encoder checkpoints (19 MB), and
+    `data/<cell>.npz`, the 487 recorded responses (5.3 GB);
+  - `/home/steeve/steeve/idv/code/PRETRAINED_DIFFUSION_FOR_STEEVE/Pretrained_retina_diffusion/weights/`:
+    the 57 conditional diffusion checkpoints (4.9 GB).
 
-- **The Lorenzi encoder checkpoints, and the recordings they were fitted to:**
-  `/home/steeve/steeve/idv/datasets/proj_multigeom/open-retina-multigeom/lorenzi_adaptation/`
-  - `weights/<cell>.ckpt`: the 488 encoder checkpoints (19 MB). multigeom's retina
-    tests read them; set `RETINA_ENCODERS` to read them elsewhere.
-  - `data/<cell>.npz`: the 487 recorded responses (5.3 GB).
-- **The conditional diffusion checkpoints:**
-  `/home/steeve/steeve/idv/code/PRETRAINED_DIFFUSION_FOR_STEEVE/Pretrained_retina_diffusion/weights/`
-  (57 files, 4.9 GB); set `RETINA_WEIGHTS` to read them elsewhere.
-
-Both come from Baptiste Lorenzi and are unpublished.
+All come from Baptiste Lorenzi.
