@@ -25,5 +25,17 @@ then the few dependencies it imports, keeping your torch:
 Only the files those tests load are tracked (see `.gitignore`). **This repository is
 private: Baptiste's work is unpublished. Do not make it public without his agreement.**
 
-The model weights are not here: the Lorenzi encoder checkpoints and the diffusion
-checkpoints are kept with the data.
+## Data (not in this repository)
+
+On Steeve's machine:
+
+- **The Lorenzi encoder checkpoints, and the recordings they were fitted to:**
+  `/home/steeve/steeve/idv/datasets/proj_multigeom/open-retina-multigeom/lorenzi_adaptation/`
+  - `weights/<cell>.ckpt`: the 488 encoder checkpoints (19 MB). multigeom's retina
+    tests read them; set `RETINA_ENCODERS` to read them elsewhere.
+  - `data/<cell>.npz`: the 487 recorded responses (5.3 GB).
+- **The conditional diffusion checkpoints:**
+  `/home/steeve/steeve/idv/code/PRETRAINED_DIFFUSION_FOR_STEEVE/Pretrained_retina_diffusion/weights/`
+  (57 files, 4.9 GB); set `RETINA_WEIGHTS` to read them elsewhere.
+
+Both come from Baptiste Lorenzi and are unpublished.
